@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoAnalyzer", "VideoAnalyzer\VideoAnalyzer.csproj", "{2F057FB5-90D6-4944-A551-2CF32B6287DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F057FB5-90D6-4944-A551-2CF32B6287DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F057FB5-90D6-4944-A551-2CF32B6287DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F057FB5-90D6-4944-A551-2CF32B6287DE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2F057FB5-90D6-4944-A551-2CF32B6287DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F057FB5-90D6-4944-A551-2CF32B6287DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F057FB5-90D6-4944-A551-2CF32B6287DE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F25CF960-958B-4122-8E72-F4208EBE2F26}
+	EndGlobalSection
+EndGlobal
