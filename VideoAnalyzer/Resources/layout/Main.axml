@@ -1,7 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-</LinearLayout>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/camera_preview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:stretchColumns="1">
+  <TableRow>
+    <Button
+        android:id="@+id/button_capture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Iniciar"
+        android:layout_span="4"/>
+  </TableRow>
+  <TableRow>
+    <TextView
+        android:layout_column="1"
+        android:text="Característica"
+        android:padding="3dip" />
+    <TextView
+        android:layout_column="2"
+        android:text="Thresold"
+        android:padding="3dip" />
+    <TextView
+        android:layout_column="3"
+        android:text="Resultado"
+        android:padding="3dip" />
+    <TextView
+        android:layout_column="4"
+        android:text="Análisis"
+        android:padding="3dip" />
+  </TableRow>
+  <TableRow>
+    <TextView
+        android:layout_column="1"
+        android:text="Vista al Frente"
+        android:padding="3dip" />
+    <TextView
+        android:layout_column="2"
+        android:text="20"
+        android:padding="3dip" />
+    <TextView
+        android:layout_column="3"
+        android:text="---"
+        android:padding="3dip"
+        android:id="@+id/txtFrente"/>
+    <TextView
+        android:layout_column="4"
+        android:text="---"
+        android:padding="3dip"
+        android:id="@+id/txtAnalisisFrente"/>
+  </TableRow>
+  <TableRow>
+    <TextView
+        android:layout_column="1"
+        android:text="Apertura Boca"
+        android:padding="3dip" />
+    <TextView
+        android:layout_column="2"
+        android:text="0.2"
+        android:padding="3dip" />
+    <TextView
+        android:layout_column="3"
+        android:text="---"
+        android:padding="3dip"
+        android:id="@+id/txtBoca"/>
+    <TextView
+        android:layout_column="4"
+        android:text="---"
+        android:padding="3dip"
+        android:id="@+id/txtAnalisisBoca"/>
+  </TableRow>
+  <TableRow>
+    <TextView
+        android:layout_column="1"
+        android:text="Apertura Ojos"
+        android:padding="3dip" />
+    <TextView
+        android:layout_column="2"
+        android:text="0.45"
+        android:padding="3dip" />
+    <TextView
+        android:layout_column="3"
+        android:text="---"
+        android:padding="3dip"
+        android:id="@+id/txtOjos"/>
+    <TextView
+        android:layout_column="4"
+        android:text="---"
+        android:padding="3dip"
+        android:id="@+id/txtAnalisisOjos"/>
+  </TableRow>
+  <TableRow>
+    <TextView
+        android:layout_column="1"
+        android:text="Teléfono"
+        android:padding="3dip" />
+    <TextView
+        android:layout_column="2"
+        android:text="NO"
+        android:padding="3dip" />
+    <TextView
+        android:layout_column="3"
+        android:text="---"
+        android:padding="3dip"
+        android:id="@+id/txtCelular"/>
+    <TextView
+        android:layout_column="4"
+        android:text="---"
+        android:padding="3dip"
+        android:id="@+id/txtAnalisisCelular"/>
+  </TableRow>
+</TableLayout>
