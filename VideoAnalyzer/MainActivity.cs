@@ -12,6 +12,7 @@ using Java.Util;
 using static Android.Views.ViewGroup;
 using VideoAnalyzer.Servicios;
 using Android.Media;
+using System.Threading.Tasks;
 
 namespace VideoAnalyzer
 {
@@ -22,6 +23,9 @@ namespace VideoAnalyzer
         private CameraPreview mCameraPreview;
         private bool isProcessStarted = false;
         private bool isAnalyzing = false;
+
+        private MediaPlayer player;
+        private bool isPlaying;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -183,7 +187,7 @@ namespace VideoAnalyzer
 
                 if (rostro != null)
                 {
-                    RunOnUiThread(() =>
+                    RunOnUiThread(async () =>
                     {
                         var frente = ImageAnalyzer.AnalizarPostura(rostro);
                         TextView txtFrente = FindViewById<TextView>(Resource.Id.txtFrente);
@@ -194,6 +198,8 @@ namespace VideoAnalyzer
                             txtFrente.SetTextColor(Android.Graphics.Color.Red);
                             txtAnalisisFrente.SetTextColor(Android.Graphics.Color.Red);
                             txtAnalisisFrente.Text = "No estás mirando al frente";
+
+                            await PlayAlarm();
                         }
                         else
                         {
@@ -212,6 +218,8 @@ namespace VideoAnalyzer
                             txtBoca.SetTextColor(Android.Graphics.Color.Red);
                             txtAnalisisBoca.SetTextColor(Android.Graphics.Color.Red);
                             txtAnalisisBoca.Text = "Posiblemente está bostezando";
+
+                            await PlayAlarm();
                         }
                         else
                         {
@@ -230,6 +238,8 @@ namespace VideoAnalyzer
                             txtOjos.SetTextColor(Android.Graphics.Color.Red);
                             txtAnalisisOjos.SetTextColor(Android.Graphics.Color.Red);
                             txtAnalisisOjos.Text = "¡Está dormido!";
+
+                            await PlayAlarm();
                         }
                         else
                         {
@@ -298,6 +308,35 @@ namespace VideoAnalyzer
             return mediaFile;
         }
 
+
+        public async Task<bool> PlayAlarm()
+        {
+            if (!isPlaying)
+            {
+                isPlaying = true;
+
+                //for (int i = 0; i < 3; i++)
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(1));
+
+                    if (player != null)
+                    {
+                        player.Stop();
+                        player.Release();
+                        player = null;
+                    }
+
+                    player = MediaPlayer.Create(this, Resource.Raw.beep);
+                    player.Start();
+                }
+
+                isPlaying = false;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
-
